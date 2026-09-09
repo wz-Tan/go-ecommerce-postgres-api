@@ -1,0 +1,15 @@
+services:
+  go-ecommerce-postgres:
+    image: postgres:16-alpine
+    container_name: go-ecommerce-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: go_ecommerce
+    ports:
+      - "5432:5432"
+    volumes:
+      - go-ecommerce-pgdata:/var/lib/postgresql/data
+
+volumes:
+  go-ecommerce-pgdata:
